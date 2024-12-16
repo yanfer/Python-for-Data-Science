@@ -70,3 +70,8 @@ Numbers = "0123456"
 print(Numbers[::2])
 
 print("0123456".find('1'))
+
+print(3 + 2 * 2)
+
+name = 'Lizz'
+print(name[0:2])

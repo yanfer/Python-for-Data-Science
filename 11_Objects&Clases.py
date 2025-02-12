@@ -1,3 +1,7 @@
+# Import the library
+#Now we are going to create a class Circle, but first, we are going to import a library to draw the objects:
+import matplotlib.pyplot as plt
+
 """ Python has a lot of data types """
 #Types:
 """ 
@@ -159,12 +163,21 @@ print(C2.radius) #10
 
 """ We can add default values to the parameters of a class’s constructor. """
 class Circle3 (object):  
-    def __init__(self, radius=3, color="red"):  # <--- Default values
-        self.radius = radius   
+    # Constructor
+    def __init__(self, radius=3, color='blue'):
+        self.radius = radius
         self.color = color 
-
-    def add_radius(self, value):   
-        self.radius = self.radius + value 
+    
+    # Method
+    def add_radius(self, r):
+        self.radius = self.radius + r
+        return(self.radius)
+    
+    # Method
+    def drawCircle(self):
+        plt.gca().add_patch(plt.Circle((0, 0), radius=self.radius, fc=self.color))
+        plt.axis('scaled')
+        plt.show()  
 
 """ 
 The “D I R” function is useful for obtaining the list of data attributes and methods associated with a class. 
